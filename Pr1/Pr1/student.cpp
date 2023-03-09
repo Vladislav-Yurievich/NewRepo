@@ -131,3 +131,40 @@ void Search_Student_Max_Score(Student stud[], int count, int subject) {
 	}
 
 }
+
+
+// ‘ункци€ чтени€/записи массива в двоичный файл
+
+int File_Input_Outputr_Binary(int arr[], int n, const int MAX_SIZE) {
+
+	arr[MAX_SIZE];
+
+	ofstream outFile("C:/Users/admin/Documents/data.bin", ios::binary);
+	ifstream inFile("C:/Users/admin/Documents/data.bin", ios::binary);
+
+	// input arr
+
+	cout << "¬ведите элементы массива: ";
+	
+	for (int i = 0; i < n; i++)
+	{
+		cin >> arr[i];
+		outFile.write((char*)&arr[i], sizeof(arr[i]));
+	}
+
+	outFile.close();
+
+	// чтение элементов массива из файла + вывод
+
+	cout << "Ёлементы массива из файла: " << endl;
+
+	for (int i = 0; i < n; i++)
+	{
+		inFile.read((char*)&arr[i], sizeof(arr[i]));
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+	inFile.close();
+
+	return 0;
+}
