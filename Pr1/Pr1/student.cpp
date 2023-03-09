@@ -5,7 +5,7 @@
 #include "functions.h"
 using namespace std;
 
-// Функция ввода студентов
+// Р¤СѓРЅРєС†РёСЏ РІРІРѕРґР° СЃС‚СѓРґРµРЅС‚РѕРІ
 
 void Input_Student(Student stud[], int count) {
 	
@@ -13,7 +13,7 @@ void Input_Student(Student stud[], int count) {
 	{
 		cout << "\n";
 
-		cout << "Введите ФИО: ";
+		cout << "Р’РІРµРґРёС‚Рµ Р¤РРћ: ";
 		cin.get();
 		cin.get(stud[i].FIO, 30);
 		cin.get();
@@ -22,11 +22,11 @@ void Input_Student(Student stud[], int count) {
 
 		cout << "\n";
 
-		cout << "Баллы по предметам: " << endl;
+		cout << "Р‘Р°Р»Р»С‹ РїРѕ РїСЂРµРґРјРµС‚Р°Рј: " << endl;
 
 		for (int j = 0; j < 5; j++)
 		{
-			cout << "Балл по " << j << " предмету: ";
+			cout << "Р‘Р°Р»Р» РїРѕ " << j << " РїСЂРµРґРјРµС‚Сѓ: ";
 			cin >> stud[i].score[j];
 			stud[i].average_score += stud[i].score[j];
 		}
@@ -35,34 +35,34 @@ void Input_Student(Student stud[], int count) {
 	}
 }
 
-// Функция вывод студентов
+// Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґ СЃС‚СѓРґРµРЅС‚РѕРІ
 
 void Output_Student(Student stud[], int count) {
 
-	cout << endl << "Список студентов: " << "\n\n";
+	cout << endl << "РЎРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ: " << "\n\n";
 
 	for (int i = 0; i < count; i++)
 	{
-		cout << "Студент: " << i + 1 << ": " << endl;
+		cout << "РЎС‚СѓРґРµРЅС‚: " << i + 1 << ": " << endl;
 
-		cout << "ФИО: " << stud[i].FIO << endl;
+		cout << "Р¤РРћ: " << stud[i].FIO << endl;
 
 		int sum = 0;
 
 		for (int j = 0; j < 5; j++)
 		{
-			cout << "Оценка: " << j + 1 << ": " << stud[i].score[j] << endl;
+			cout << "РћС†РµРЅРєР°: " << j + 1 << ": " << stud[i].score[j] << endl;
 			sum += stud[i].score[j];
 		}
 
 		double average = sum / 5.0;
 
-		cout << "Средний балл = " << average << "\n\n";
+		cout << "РЎСЂРµРґРЅРёР№ Р±Р°Р»Р» = " << average << "\n\n";
 	}
 
 }
 
-// поиск студента по ФИО
+// РїРѕРёСЃРє СЃС‚СѓРґРµРЅС‚Р° РїРѕ Р¤РРћ
 
 void Search_Student(Student stud[], int count, string FIO) {
 	
@@ -70,8 +70,8 @@ void Search_Student(Student stud[], int count, string FIO) {
 	{
 		if (stud[i].FIO == FIO)
 		{
-			cout << "Найден студент: " << FIO << ":" << endl;
-			cout << "Оценки: " << endl;
+			cout << "РќР°Р№РґРµРЅ СЃС‚СѓРґРµРЅС‚: " << FIO << ":" << endl;
+			cout << "РћС†РµРЅРєРё: " << endl;
 
 			for (int j = 0; j < 5; j++)
 			{
@@ -84,7 +84,7 @@ void Search_Student(Student stud[], int count, string FIO) {
 }
 
 
-// Сортировка массива студентов по среднему баллу
+// РЎРѕСЂС‚РёСЂРѕРІРєР° РјР°СЃСЃРёРІР° СЃС‚СѓРґРµРЅС‚РѕРІ РїРѕ СЃСЂРµРґРЅРµРјСѓ Р±Р°Р»Р»Сѓ
 
 void SortAverageBall(Student stud[], int count) {
 
@@ -104,7 +104,7 @@ void SortAverageBall(Student stud[], int count) {
 	}
 }
 
-// Функция поиска студента с максимальным баллом по заданному предмету
+// Р¤СѓРЅРєС†РёСЏ РїРѕРёСЃРєР° СЃС‚СѓРґРµРЅС‚Р° СЃ РјР°РєСЃРёРјР°Р»СЊРЅС‹Рј Р±Р°Р»Р»РѕРј РїРѕ Р·Р°РґР°РЅРЅРѕРјСѓ РїСЂРµРґРјРµС‚Сѓ
 
 void Search_Student_Max_Score(Student stud[], int count, int subject) {
 
@@ -123,17 +123,17 @@ void Search_Student_Max_Score(Student stud[], int count, int subject) {
 
 	if (max_score_student_index != -1)
 	{
-		cout << "Студент с макс. баллом по предмету: " << subject + 1 << ": " << stud[max_score_student_index].FIO << endl;
-		cout << "Балл: " << max_score << endl;
+		cout << "РЎС‚СѓРґРµРЅС‚ СЃ РјР°РєСЃ. Р±Р°Р»Р»РѕРј РїРѕ РїСЂРµРґРјРµС‚Сѓ: " << subject + 1 << ": " << stud[max_score_student_index].FIO << endl;
+		cout << "Р‘Р°Р»Р»: " << max_score << endl;
 	}
 	else {
-		cout << "Не найдены студенты, которые имеют оценки по предмету: " << subject + 1 << endl;
+		cout << "РќРµ РЅР°Р№РґРµРЅС‹ СЃС‚СѓРґРµРЅС‚С‹, РєРѕС‚РѕСЂС‹Рµ РёРјРµСЋС‚ РѕС†РµРЅРєРё РїРѕ РїСЂРµРґРјРµС‚Сѓ: " << subject + 1 << endl;
 	}
 
 }
 
 
-// Функция чтения/записи массива в двоичный файл
+// Р¤СѓРЅРєС†РёСЏ С‡С‚РµРЅРёСЏ/Р·Р°РїРёСЃРё РјР°СЃСЃРёРІР° РІ РґРІРѕРёС‡РЅС‹Р№ С„Р°Р№Р»
 
 int File_Input_Outputr_Binary(int arr[], int n, const int MAX_SIZE) {
 
@@ -144,7 +144,7 @@ int File_Input_Outputr_Binary(int arr[], int n, const int MAX_SIZE) {
 
 	// input arr
 
-	cout << "Введите элементы массива: ";
+	cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР°: ";
 	
 	for (int i = 0; i < n; i++)
 	{
@@ -154,9 +154,9 @@ int File_Input_Outputr_Binary(int arr[], int n, const int MAX_SIZE) {
 
 	outFile.close();
 
-	// чтение элементов массива из файла + вывод
+	// С‡С‚РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° РёР· С„Р°Р№Р»Р° + РІС‹РІРѕРґ
 
-	cout << "Элементы массива из файла: " << endl;
+	cout << "Р­Р»РµРјРµРЅС‚С‹ РјР°СЃСЃРёРІР° РёР· С„Р°Р№Р»Р°: " << endl;
 
 	for (int i = 0; i < n; i++)
 	{
