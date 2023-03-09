@@ -1,34 +1,29 @@
 #pragma once
-
-#include <string>
 #include <iostream>
+#include <string>
 #include <algorithm>
 #include <fstream>
-
-// Структура для хранения данных о студенте
 using namespace std;
 
+// Структура для хранения данных о студенте
+
+const int NUM_STUDENTS = 25;
+
 struct Student {
+	char FIO[30];
+	int score[5];
 
-    string name;
-    string surname;
-    string patronymic;
-
-    int marks[5]; // Оценки по 5 дисциплинам
-
+	float average_score; // средний балл
 };
 
-// Функции для работы с массивом студентов
-int input_students(Student students[], int count); //
 
-int output_students(Student students[], int count);// Вывод данных о студентах
 
-int search_student(Student students[], int count, string name, string surname, string patronymic); // Функция поиска студента по ФИО
+void Input_Student(Student stud[], int count);
 
-void search_max_mark_student(Student students[], int count, int subject); //функцию поиска студента с максимальным баллом по заданному предмету; 
+void Output_Student(Student stud[], int count);
 
-void sort_students_by_name(Student students[], int count); // Сортировка студентов по ФИО
+void Search_Student(Student stud[], int count, string FIO);
 
-void sort_students_by_average(Student students[], int count); // Сортировка студентов по среднему баллу
+void SortAverageBall(Student stud[], int count);
 
-int FileInputOutputBinary(int array[], int n, const int MAX_SIZE);//функции чтения/записи массива в двоичный файл, то есть хранение данных на внешнем носителе.
+void Search_Student_Max_Score(Student stud[], int count);
