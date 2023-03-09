@@ -16,8 +16,6 @@ struct Student {
 	float average_score; // средний балл
 };
 
-
-
 void Input_Student(Student stud[], int count);
 
 void Output_Student(Student stud[], int count);
@@ -26,4 +24,4 @@ void Search_Student(Student stud[], int count, string FIO);
 
 void SortAverageBall(Student stud[], int count);
 
-void Search_Student_Max_Score(Student stud[], int count);
+void Search_Student_Max_Score(Student stud[], int count, int subject);

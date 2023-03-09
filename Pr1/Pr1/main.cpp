@@ -5,7 +5,7 @@ using namespace std;
 int main() {
 	setlocale(LC_ALL, "Russian");
 
-	const int COUNT = 2;
+	const int COUNT = 5;
 
 	Student stud[COUNT];
 
@@ -16,7 +16,6 @@ int main() {
 	// поиск студента по ФИО
 	string FIO;
 	
-
 	cout << "Введите ФИО студента для поиска: ";
 	cin >> FIO;
 
@@ -27,4 +26,8 @@ int main() {
 	SortAverageBall(stud, COUNT);
 	cout << "\n" << "Сортировка студентов по среднему баллу: " << "\n";
 	Output_Student(stud, COUNT);
+
+	// Поиск студента с максимальным баллом по заданному предмету
+
+	Search_Student_Max_Score(stud, COUNT, 0);
 }

@@ -106,6 +106,28 @@ void SortAverageBall(Student stud[], int count) {
 
 // Функция поиска студента с максимальным баллом по заданному предмету
 
-void Search_Student_Max_Score(Student stud[], int count) {
+void Search_Student_Max_Score(Student stud[], int count, int subject) {
+
+	double max_score = -1.0;
+
+	int max_score_student_index = -1;
+
+	for (int i = 0; i < count; i++)
+	{
+		if (stud[i].score[subject] > max_score)
+		{
+			max_score = stud[i].score[subject];
+			max_score_student_index = i;
+		}
+	}
+
+	if (max_score_student_index != -1)
+	{
+		cout << "Студент с макс. баллом по предмету: " << subject + 1 << ": " << stud[max_score_student_index].FIO << endl;
+		cout << "Балл: " << max_score << endl;
+	}
+	else {
+		cout << "Не найдены студенты, которые имеют оценки по предмету: " << subject + 1 << endl;
+	}
 
 }
